@@ -26,14 +26,14 @@ public class Main {
         for (int i = 0; i < classesNodeList.getLength(); i++) {
             Nodes.add(classesNodeList.item(i));
         }
-        nodes.sort(new Comparator<Node>() {
+        Nodes.sort(new Comparator<Node>() {
             public int compare(Node o1, Node o2) {
                 return ((Element) o1).getElementsByTagName("SHORT-NAME").item(0).getTextContent().compareTo(
                         ((Element) o2).getElementsByTagName("SHORT-NAME").item(0).getTextContent());
             }
         });
 
-        return nodes;
+        return Nodes;
     }
     public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException, TransformerException, EmptyAutosarFileException, NotValidAutosarFileException {
         String filename = args[0];
